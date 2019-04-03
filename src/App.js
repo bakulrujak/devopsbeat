@@ -25,7 +25,7 @@ class App extends Component {
               <h1>
                 Devops Beat
               </h1>
-              {this.state.stream_data.map((data, i) =>
+              {Object.keys(this.state.stream_data).map((data, i) =>
                 <Button key={i} href={data.url} variant="outline-info" className="mb-3 text-left" lg="auto" block>
                   {data.text}
                 </Button>                
