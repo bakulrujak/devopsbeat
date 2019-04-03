@@ -36,6 +36,10 @@ class App extends Component {
           />
         </Media>
         {display}
+        <span>
+          Built by <a href="https://andika.kurniantoro.com" target="_blank" rel="noopener noreferrer">Andika Kurniantoro</a><br />
+          With <a href="https://aws-amplify.github.io/" target="_blank" rel="noopener noreferrer">AWS Amplify</a>
+        </span>
       </Container>
     );
   }
