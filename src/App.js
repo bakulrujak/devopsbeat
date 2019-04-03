@@ -16,20 +16,25 @@ class App extends Component {
 
   async componentDidMount() {
     let new_data_stream = await api.fetch_data_stream();
-    this.setState({ stream_data: new_data_stream });
-    console.log("Fetched data: ", this.state.stream_data);
+    this.setState({ stream_data: new_data_stream['data'] });
   }
   render() {
+    const parsed_data = this.state.stream_data;
+    const display = Object.keys(parsed_data).map((data, i) => {
+      // console.log("Data -> ", parsed_data[i]);
+      return (
+        <Button key={i} href={parsed_data[i]['url']} variant="outline-info" className="mb-3 text-left" lg="auto" block>
+          {parsed_data[i]['text']}
+        </Button>   
+      )             
+    })
+    
     return (
-            <Container>
+            <Container className="mt-4">
               <h1>
                 Devops Beat
               </h1>
-              {Object.keys(this.state.stream_data).map((data, i) =>
-                <Button key={i} href={data.url} variant="outline-info" className="mb-3 text-left" lg="auto" block>
-                  {data.text}
-                </Button>                
-              )}
+              {display}
             </Container>
     );
   }
