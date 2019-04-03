@@ -17,6 +17,9 @@ p {
   font-size: 1.1em !important;
 }
 
+.align-self-center {
+  margin: 0 auto !important;
+}
 .btn {
   font-size: 1em;
   font-family: Roboto Mono,Roboto,system-ui,BlinkMacSystemFont,-apple-system,Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;

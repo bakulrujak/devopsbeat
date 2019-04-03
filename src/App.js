@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import * as api from "./Caller";
-// import Card from 'react-bootstrap/Card';
-// import CardGroup from 'react-bootstrap/CardGroup';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-// import sampledata from './sampledata';
+import Media from 'react-bootstrap/Media';
 
 class App extends Component {
   constructor(props) {
@@ -30,12 +26,17 @@ class App extends Component {
     })
     
     return (
-            <Container className="mt-4">
-              <h1>
-                Devops Beat
-              </h1>
-              {display}
-            </Container>
+      <Container className="mt-4 align-self-center">
+        <Media className="mb-3 mt-3">
+          <img
+            className="align-self-center"
+            width={150}
+            alt="Devops Beat"
+            src={process.env.PUBLIC_URL + '/logo_text.png'}
+          />
+        </Media>
+        {display}
+      </Container>
     );
   }
 }
